@@ -1,9 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-<<<<<<< HEAD
-=======
 require 'pry'
->>>>>>> 0c15b08f2ef92fb96fe08e0483ff0e3fb86f3c8c
 
 set :sessions, true
 
@@ -125,15 +122,9 @@ end
 
 post '/bet_amount' do
   session[:bet_amount] = params[:bet_amount]
-<<<<<<< HEAD
-  if session[:bet_amount].to_i > session[:account] || session[:bet_amount].to_i == 0 || session[:bet_amount].to_i < 0
+  if session[:bet_amount].to_i > session[:account] || session[:bet_amount].to_i <= 0
     @error = "A proper bet is required"
     halt erb(:bet_amount)
-=======
-  if session[:bet_amount].to_i > session[:account] || session[:bet_amount].to_i == 0
-    session[:bet_amount] = 0  
-    redirect '/bet_amount'
->>>>>>> 0c15b08f2ef92fb96fe08e0483ff0e3fb86f3c8c
   end
   redirect '/game'
 end
