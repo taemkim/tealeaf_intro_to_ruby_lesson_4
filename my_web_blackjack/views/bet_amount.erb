@@ -1,0 +1,17 @@
+<html>
+<head>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+  <h3> How much do you want to bet? </h3>
+  <h6> Your account: $ <%= session[:account] %></h6>
+
+  <form action='/bet_amount' method='post'>
+    <input type='text' name='bet_amount'>
+    <input type="submit" class="btn"/>
+  </form>
+
+<script src="/js/bootstrap.min.js"></script>
+<body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/application.css" rel="stylesheet">
+</head>
+<body>
+  <div id="game" class="well">
+  <h6> Your account (including bet amount): $ <%= session[:account] %></h6>
+  <h6> Bet amount: $ <%= session[:bet_amount] %></h6>
+    <h5><%= session[:username] %>'s cards:</h5>
+      <% session[:player_cards].each do |num| %>
+        <%= card_image(num) %>
+      <% end %>
+    <h4><%= session[:username] %> has <%= session[:player_card_value_adj] %>.</h4>
+
+    <h5>Dealer's cards:</h5>
+      <%= card_image(session[:dealer_cards][0]) %>
+      <img src="/images/cards/cover.jpg">
+  </br>
+  </br>
+	<form id="hit_form" action='hit' method='post'>
+		<input type="submit" class="btn" value="hit"/>
+	</form>
+	<form id="stay_form" action='stay' method='post'>
+		<input type="submit" class="btn" value="stay"/>
+	</form>
+
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+<body>
+</html>
